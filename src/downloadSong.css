@@ -1,0 +1,67 @@
+.downloadPageMain{
+    height: 85vh;
+    width: 100%;
+    flex-direction: column;
+    gap:2rem;
+    overflow-y: hidden;
+}
+.songInfoContainer{
+    text-align: center;
+}
+.songInfoContainer p{
+    margin:0.75rem 0;
+    color: var(--headingBlack);
+}
+.songInfoContainer p b{
+    color: var(--masterRed);
+    font-size: 1.5rem;
+}
+.songInfoContainer p span{
+    color: var(--masterRed);
+}
+.songInfoContainer img{
+    width: 22.5vw;
+    border-radius: 1rem;
+    box-shadow:0 0 2.5rem var(--borderColor);
+}
+.generateButtonContainer button{
+    width: 12.5rem;
+    padding: 1rem;
+    background-color: var(--subTextBlack);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--headerSidebarSongFooterBackgroundWhite);
+    font-size: 1rem;
+    cursor: pointer;
+}
+.countDownDisplayContainer p{
+    text-align: center;
+    color: var(--headingBlack);
+    margin:0.25rem 0;  
+}
+.countDownDisplayContainer p b{
+    color: var(--masterRed);
+}
+.downloadButtonContainer a{
+    padding:0.5rem 0.75rem;
+    background-color: var(--masterRed);
+    color: var(--headerSidebarSongFooterBackgroundWhite);
+    border-radius: 0.25rem;
+}
+@media screen and (max-width:480px){
+    #root .downloadPageHeader{
+        display: flex;
+        gap:1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .downloadPageHeader p{
+        text-align: center;
+    }
+    .songInfoContainer{
+        margin:2rem 0;
+    }
+    .songInfoContainer img{
+        width: 75vw;
+    }
+}

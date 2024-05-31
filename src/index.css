@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+}
+:root{
+    --masterRed :#FF4545;
+    --hoverRed :linear-gradient(90deg, #FFF2F2 .07%, rgba(255, 255, 255, 0) 99.91%);
+    --headerSidebarSongFooterBackgroundWhite:#FFFFFF;
+    --mainBackgroundWhite:#FBFCFF;
+    --headingBlack:#222428;
+    --subTextBlack:#4a525f;
+    --borderColor:#D8D9D9;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+#root{
+    height: 100vh;
+    width: 100%;
+    position:relative;
+    display: flex;
+    align-items: center;
+}
+.w-100{
+    width: 100%;
+}
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+.flexColumn{
+    flex-direction: column;
+}
+.justifyCenter{
+    justify-content: center;
+}
+.justifyLeft{
+    justify-content: left;
+}
+.justifyRight{
+    justify-content: right;
+}
+.spaceBetween{
+    justify-content: space-between;
+}
+.alignCenter{
+    align-items: center;
+}
+.flexWrap{
+    flex-wrap: wrap;
+}
+.grid{
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(9rem,1fr));
+    gap:1rem;
+}
+@media (max-width: 426px){
+    #root{
+        height: 100%;
+    }
+    header{
+        padding:0.5rem 1rem;
+    }
+    header svg{
+        display: block;
+    }
+    aside{
+        width: 75%;
+        bottom:62px;
+        transform: translateX(-100%);
+        transition: all ease-in-out 0.2s;
+    }
+    .asideActive{
+        transform: translateX(0);
+        z-index: 1;
+    }
+    main {
+        width:100%;
+    }
+    .grid{
+        grid-template-columns:repeat(auto-fill,minmax(8rem,1fr));
+    }
+    footer{
+        padding:0.75rem;
+    }
+    .footerSongInfo img{
+        margin: 0 auto;
+    }
+    footer .footerSongInfo h3{
+        display: none;
+    }
+    footer .iconsContainer{
+        width: 40%;
+    }
+}
