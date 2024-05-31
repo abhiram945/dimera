@@ -7,44 +7,14 @@ footer{
     padding:0 5rem;
     z-index:2;
 }
-footer .seekBarContainer{
+footer .seekBar[type=range]{
     position: absolute;
     top:0;
     left: 0;
     right: 0;
     height: 0.2rem;
-}
-footer .seekBarContainer .seekBarBackground{
-    position:absolute;
-    top:0;
-    left: 0;
-    height: 0.2rem;
-    background-color: var(--masterRed);
-    z-index: 1;
-}
-footer .seekBarContainer .seekBar{
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    height: 0.2rem;
-    z-index: 0;
-    -webkit-appearance: none;
-    background-color: var(--mainBackgroundWhite);
-    cursor: pointer;
     outline: none;
-}
-.seekBar::-webkit-slider-thumb{
-    appearance: none;
-    -webkit-appearance: none;
-    height: 0.5rem;
-    width: 0.5rem;
-    border-radius: 50%;
-    background-color: var(--masterRed);
-}
-.seekBar:hover::-webkit-slider-thumb{
-    width: 0.75rem;
-    height: 0.75rem;
+    accent-color: var(--masterRed);
 }
 footer .songImageNameContainer{
     width: 40%;

@@ -8,7 +8,7 @@ const Footer = () => {
   const song = currentId ? apiData[currentId - 1].song : null;
   const audioRef = useRef(null);
   const [isPlaying,setIsPlaying]=useState(false);
-  
+  const [currentTime, setCurrentTime]=useState(0);
   const handlePlayNext=()=>{
     if(!currentId){
       return;
@@ -36,7 +36,8 @@ const Footer = () => {
     setCurrentId(currentCategoryList[(currentCategoryList.indexOf(apiData[currentId-1])-1+currentCategoryList.length)%currentCategoryList.length].id);
   }
   return <footer className='flex alignCenter w-100'>
-    <audio src={currentId ? apiData[currentId - 1].songUrl : null} autoPlay ref={audioRef} onPlay={()=>setIsPlaying(true)} onPause={()=>setIsPlaying(false)}/>
+    <audio src={currentId ? apiData[currentId - 1].songUrl : null} autoPlay ref={audioRef} onPlay={()=>setIsPlaying(true)} onPause={()=>setIsPlaying(false)} onTimeUpdate={()=>setCurrentTime(audioRef.current.currentTime)} onEnded={()=>handlePlayNext()}/>
+    {audioRef.current&&<input type='range' className='seekBar' placeholder='seekBar' max={audioRef.current.duration||0} value={currentTime} onChange={(e)=>audioRef.current.currentTime = e.target.value}/>}
     <div className='songImageNameContainer flex alignCenter'>
       {currentId &&
         <><img src={apiData[currentId - 1].thumbnailUrl} alt='songImage' />
