@@ -3,18 +3,26 @@ footer{
     bottom: 0;
     height: 7.5vh;
     background-color: var(--headerSidebarSongFooterBackgroundWhite);
-    border-top: solid 0.075rem var(--borderColor);
     padding:0 5rem;
     z-index:2;
 }
-footer .seekBar[type=range]{
+footer .seekBar{
     position: absolute;
     top:0;
     left: 0;
     right: 0;
+    appearance: none;
+    -webkit-appearance: none;
     height: 0.2rem;
-    outline: none;
-    accent-color: var(--masterRed);
+    width: 100%;
+}
+footer .seekBar::-webkit-slider-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--masterRed);
 }
 footer .songImageNameContainer{
     width: 40%;

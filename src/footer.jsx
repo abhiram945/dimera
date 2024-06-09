@@ -37,7 +37,7 @@ const Footer = () => {
   }
   return <footer className='flex alignCenter w-100'>
     <audio src={currentId ? apiData[currentId - 1].songUrl : null} autoPlay ref={audioRef} onPlay={()=>setIsPlaying(true)} onPause={()=>setIsPlaying(false)} onTimeUpdate={()=>setCurrentTime(audioRef.current.currentTime)} onEnded={()=>handlePlayNext()}/>
-    {audioRef.current&&<input type='range' className='seekBar' placeholder='seekBar' max={audioRef.current.duration||0} value={currentTime} onChange={(e)=>audioRef.current.currentTime = e.target.value}/>}
+    {audioRef.current&&<input style={{background:`linear-gradient(90deg, var(--masterRed) ${(currentTime/audioRef?.current?.duration)*100||0}%, var(--borderColor) 0%)`}} type='range' className='seekBar' placeholder='seekBar' max={audioRef.current.duration||0} value={currentTime} onChange={(e)=>{audioRef.current.currentTime = e.target.value}}/>}
     <div className='songImageNameContainer flex alignCenter'>
       {currentId &&
         <><img src={apiData[currentId - 1].thumbnailUrl} alt='songImage' />

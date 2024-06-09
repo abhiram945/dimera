@@ -24,7 +24,7 @@ const Header=()=>{
             </Link>
         </div>
         <div className="inputContainer">
-            <input type="text" placeholder="search for song" onChange={(event)=>handleSearch(event)}/>
+            <input type="text" placeholder="search for song" name='search' onChange={(event)=>handleSearch(event)}/>
             <img src='../assets/searchIcon.svg' alt='seachIcon'/>
             <div className={`searchResultsContainer ${filteredSongs.length>0?'flex':'none'}`}>
                 {filteredSongs.map((song, index) => (
