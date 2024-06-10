@@ -145,6 +145,7 @@ main{
         top:7.5vh;
         bottom: 7.5vh;
         left: 0;
+        height: 85dvh;
         transform: translateX(-100%);
         z-index: 1;
         transition: all ease-in-out 0.2s;
