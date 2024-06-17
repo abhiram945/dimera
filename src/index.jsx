@@ -16,7 +16,7 @@ const Audic=()=>{
     useEffect(() => {
     const fetchData = async () => {
     try{
-        await fetch('https://raw.githubusercontent.com/abhiram945/audic-api/main/audicApi.json').then(response=>response.json()).then(jsonData=>setApiData(jsonData.songs));
+        await fetch('https://raw.githubusercontent.com/abhiram945/audic-api/main/audicApi.json').then(response=>response.json()).then(jsonData=>{console.log(jsonData);setApiData(jsonData.songs)});
         
     }
     catch(error){
