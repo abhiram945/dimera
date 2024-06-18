@@ -21,7 +21,7 @@ const Main = () => {
                         <img src={filteredSong.thumbnailUrl} alt={filteredSong.thumbnailUrl.replace('.jpg', '')} onClick={() => { setCurrentId(filteredSong.id); setCurrentCategoryList(filteredSongs); }} />
                         <div className='songNamePlus flex spaceBetween alignCenter'>
                             <p>{filteredSong.song}</p>
-                            <img src='../assets/plusIcon.svg' alt='plusIcon' onClick={() => setQueue([...queue, filteredSong.id])} />
+                            {!queue.includes(filteredSong.id) ?<img src='../assets/plusIcon.svg' alt='plusIcon' onClick={() => setQueue([...queue, filteredSong.id])} />:<img src='../assets/tickIcon.svg' alt='tickIcon'/>}
                         </div>
                     </div>
                 ))}
