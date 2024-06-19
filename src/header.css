@@ -2,13 +2,20 @@ header{
     position: fixed;
     top:0;
     z-index: 1;
-    padding:0 2.5rem;
+    padding:0 5rem;
     height: 7.5vh;
     background-color: var(--headerSidebarSongFooterBackgroundWhite);
     border-bottom: solid 0.075rem var(--borderColor);
 }
+.logoContainer{
+    height: 7.5vh;
+}
 .logoContainer img{
-    width: 3.5rem;
+    width: 7.5vh;
+}
+.logoContainer h1{
+    margin-left: 1rem;
+    color: var(--masterRed);
 }
 .inputContainer{
     width: 25vw;
@@ -53,18 +60,12 @@ header{
     background: var(--hoverRed);
     color: var(--masterRed);
 }
-.getApp{
-    color: var(--borderColor);
-    background-color: var(--masterRed);
-    padding:0.5rem 0.75rem;
-    border-radius: 0.5rem;
-}
 @media screen and (max-width:480px){
     header{
         padding: 0 1rem;
     }
     .logoContainer img{
-        width: 8rem;
+        width: 3.5rem;
     }
     .inputContainer{
         width: 37.5vw;
@@ -82,9 +83,7 @@ header{
     .block{
         display: block;
     }
-    .getApp{
-        position: fixed;
-        bottom: 4.5rem;
-        right: 1rem;
+    .logoNone{
+        display: none;
     }
 }

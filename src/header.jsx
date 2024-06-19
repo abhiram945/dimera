@@ -19,9 +19,9 @@ const Header=()=>{
     }
     return<header className='flex alignCenter spaceBetween w-100'>
         <div className="logoContainer">
-            <Link to='/'>
-                {/* <img src="../assets/logo.svg" alt="logo"/> */}
+            <Link to='/' className='flex alignCenter'>
                 <img src="../assets/logo.png" alt="logo"/>
+                <h1 className='logoNone'>DIMERA</h1>
             </Link>
         </div>
         <div className="inputContainer">
@@ -43,7 +43,6 @@ const Header=()=>{
             <img src='../assets/queueIcon.svg' alt='queueIcon' onClick={()=>{try{setActivemenu(true);document.querySelector('#root aside').classList.add('asideActive');}catch(e){}}}/>
             } 
         </div>
-        <Link to="/app" className='getApp'>Get App</Link>
     </header>
 }
 export default Header;

@@ -4,7 +4,6 @@ import Header from './header';
 import Main from './main';
 import Footer from './footer';
 import Downloadsong from './downloadSong';
-import DimeraApp from './dimeraApp';
 import { createContext, useState, useEffect } from 'react';
 
 const Dimera = () => {
@@ -31,7 +30,6 @@ const Dimera = () => {
                 <Routes>
                     <Route path='/' element={<Main />} />
                     <Route path='/:song' element={<Downloadsong />} />
-                    <Route path='/app' element={<DimeraApp />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
