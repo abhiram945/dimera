@@ -20,7 +20,8 @@ const Header=()=>{
     return<header className='flex alignCenter spaceBetween w-100'>
         <div className="logoContainer">
             <Link to='/'>
-                <img src="../assets/logo.svg" alt="logo"/>
+                {/* <img src="../assets/logo.svg" alt="logo"/> */}
+                <img src="../assets/logo.png" alt="logo"/>
             </Link>
         </div>
         <div className="inputContainer">

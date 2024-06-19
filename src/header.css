@@ -8,7 +8,7 @@ header{
     border-bottom: solid 0.075rem var(--borderColor);
 }
 .logoContainer img{
-    width: 12rem;
+    width: 3.5rem;
 }
 .inputContainer{
     width: 25vw;
