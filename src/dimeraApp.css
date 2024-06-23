@@ -1,0 +1,41 @@
+.appPageContainer{
+    width: 100%;
+    text-align: center;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        display:none;
+    }
+}
+.appPageContainer h2 span{
+    color: var(--masterRed);
+}
+.appPageContainer .imagesContainer{
+    display: flex;
+    width: 100%;
+    padding:1rem;
+    gap:5rem;
+    justify-content: center;
+    align-items: center;
+}
+.imagesContainer img{
+    width: 15vw;
+}
+.imagesContainer a{
+    background-color: var(--masterRed);
+    color: var(--headerSidebarSongFooterBackgroundWhite);
+    padding:0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+@media screen and (max-width:480px){
+    .appPageContainer{
+        padding: 5rem 0;
+        line-height: 2rem;
+    }
+    .appPageContainer .imagesContainer{
+        flex-direction: column;
+        gap:1rem;
+    }
+    .imagesContainer img{
+        width: 95%;
+    }
+}

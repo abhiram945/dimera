@@ -60,6 +60,13 @@ header{
     background: var(--hoverRed);
     color: var(--masterRed);
 }
+.getAppButton{
+    display: inline-block;
+    background-color: var(--masterRed);
+    color:var(--borderColor);
+    padding:0.75rem 1rem;
+    border-radius: 0.5rem;
+}
 @media screen and (max-width:480px){
     header{
         padding: 0 1rem;
@@ -68,7 +75,7 @@ header{
         width: 3.5rem;
     }
     .inputContainer{
-        width: 37.5vw;
+        width: 50vw;
     }
     .inputContainer img{
         left:0.5rem;
@@ -85,5 +92,10 @@ header{
     }
     .logoNone{
         display: none;
+    }
+    .getAppButton{
+        position:fixed;
+        bottom: 4rem;
+        right: 0.5rem;
     }
 }
