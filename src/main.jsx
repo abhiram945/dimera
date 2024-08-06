@@ -1,50 +1,21 @@
 import './main.css';
 import './index.css';
-import { useContext, useState, useEffect } from 'react';
+import { useContext} from 'react';
 import { musicContext } from './index';
 
 const Main = () => {
     const { apiData, currentId, setCurrentId, queue, setQueue, setCurrentCategoryList, setQueueIndex } = useContext(musicContext);
 
-    const categoriesSeparator = () => {
-        if (!apiData) return [];
-        const categories = [...new Set(apiData.map(eachSong => eachSong.category))];
-        return categories;
-    };
-
-    const [shuffledSongs, setShuffledSongs] = useState([]);
-
-    useEffect(() => {
-        if (apiData) {
-            const shuffleSongs = {};
-            const categories = categoriesSeparator();
-            categories.forEach(category => {
-                let filteredSongs = apiData.filter(eachSong => eachSong.category === category);
-                for (let i = filteredSongs.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [filteredSongs[i], filteredSongs[j]] = [filteredSongs[j], filteredSongs[i]];
-                }
-                shuffleSongs[category] = filteredSongs;
-            });
-            setShuffledSongs(shuffleSongs);
-        }
-    }, [apiData]);
-
     const categoryComponent = ({ category, index }) => {
-        const filteredSongs = shuffledSongs[category] || [];
+        const filteredSongs = apiData.filter(song=>song.category===category);
         return (
             <div className='categoryContainer' key={index}>
                 <h2>{category}<span>{` - ${filteredSongs.length} songs`}</span></h2>
                 <div className='grid'>
                     {filteredSongs.map((filteredSong, eachSongIndex) => (
                         <div className='songThumbnailContainer' key={eachSongIndex}>
-                            <img
-                                src={filteredSong.thumbnailUrl}
-                                alt={filteredSong.thumbnailUrl.replace('.jpg', '')}
-                                onClick={() => {
-                                    setCurrentId(filteredSong.id);
-                                    setCurrentCategoryList(filteredSongs);
-                                }}
+                            <img src={filteredSong.thumbnailUrl} alt={filteredSong.thumbnailUrl.replace('.jpg', '')}
+                                onClick={() => { setCurrentId(filteredSong.id); setCurrentCategoryList(filteredSongs); }}
                             />
                             <div className='songNamePlus flex spaceBetween alignCenter'>
                                 <p>{filteredSong.song}</p>
@@ -67,7 +38,7 @@ const Main = () => {
         setQueue(tempQueue);
     };
 
-    const categories = categoriesSeparator();
+    const categories = ["Bgms - surrounded","Newly Added Songs","Telugu Songs","English Songs","Feel good songs","Mood off Songs","Other language","Relaxation Songs"];
 
     return (
         <>
